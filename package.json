@@ -3,15 +3,29 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "axios": "^0.17.1",
+    "bootstrap": "^3.3.7",
+    "npm-run-all": "^4.1.2",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-bootstrap": "^0.31.5",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.6",
+    "react-router-dom": "^4.2.2",
+    "redux": "^3.7.2",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.2.0"
   },
   "devDependencies": {
+    "less-watch-compiler": "^1.10.0",
     "react-scripts": "1.0.17"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
+    "build-css": "less-watch-compiler --run-once src src/assets",
+    "watch-css": "npm run build-css && less-watch-compiler src src/assets",
+    "start-js": "react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build-js": "react-scripts build",
+    "build": "npm-run-all -p build-css build-js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
