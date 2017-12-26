@@ -5,6 +5,7 @@ import SpecsListing from "./components/specsListing/specsListing.component";
 import SpecsDetail from "./components/specsDetail/specsDetail.component";
 import './assets/App.css';
 import './assets/common/common.css';
+import Header from "./common/header.component";
 
 class App extends Component {
   render() {
@@ -12,7 +13,7 @@ class App extends Component {
       <div className="App">
         <Router>
           <div>
-            {/*<Header />*/}
+            <Header />
             <Switch>
               <Route exact path="/" component={HomePage}/>
               <Route path="/list" component={SpecsListing}/>

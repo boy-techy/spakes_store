@@ -2,7 +2,7 @@ import React from 'react';
 
 const Loader = () => {
     return(
-        <div className="specs-detail-container">
+        <div className="loader-container">
             <svg width="58" height="58" viewBox="0 0 58 58">
                 <g fill="none" fillRule="evenodd">
                     <g transform="translate(2 1)" stroke="#FFF" strokeWidth="1.5">
