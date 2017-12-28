@@ -1,0 +1,129 @@
+/*CSS For Loader*/
+.loader-container {
+  position: relative;
+  top: 50%;
+  left: 50%;
+}
+/*Header Component CSS*/
+.header-container {
+  min-height: 50px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 2px 10px #d0d3d4;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+}
+/*Specs Card*/
+.custom-card {
+  box-shadow: 7px 6px 13px #D0D3D3;
+  background-color: #dbecec;
+  padding: 10px;
+  margin-left: 2%;
+  margin-bottom: 2%;
+}
+.custom-card.col-md-4 {
+  width: 31%;
+}
+.custom-card .specs-briefs > span {
+  display: block;
+}
+.custom-card .color-change-picker .circle-bullet {
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  margin-right: 10px;
+  cursor: pointer;
+}
+.custom-card .color-change-picker .circle-bullet.circle-bullet-green {
+  background-color: green;
+}
+.custom-card .color-change-picker .circle-bullet.circle-bullet-red {
+  background-color: #ff0000;
+}
+.custom-card .color-change-picker .circle-bullet.circle-bullet-black {
+  background-color: #000;
+}
+.custom-card .color-change-picker .circle-bullet.circle-bullet-white {
+  background-color: white;
+  border: 1px solid #000;
+}
+/*SpecsListing CSS*/
+.listing-container {
+  padding: 50px 0 0;
+}
+.listing-container .filter-section > div {
+  position: fixed;
+  width: 200px;
+  border-right: 1px solid #d0d3d4;
+  height: 100vh;
+  padding-top: 15px;
+}
+.listing-container .listing-section {
+  padding-left: 0;
+}
+.listing-container .listing-section .search-component-container {
+  margin-top: 15px;
+  margin-bottom: 15px;
+  text-align: right;
+  margin-right: 15px;
+}
+.listing-container .listing-section .search-component-container input,
+.listing-container .listing-section .search-component-container button {
+  padding: 5px;
+  top: 0;
+}
+.listing-container .listing-section .search-component-container input {
+  border-bottom: 1px solid #000;
+  min-width: 20%;
+  margin-right: 10px;
+  font-size: 15px;
+  color: rgba(41, 40, 37, 0.66);
+  caret-color: rgba(41, 40, 37, 0.66);
+}
+.listing-container .listing-section .search-component-container input::placeholder {
+  color: #d0d3d4;
+}
+.listing-container .listing-section .search-component-container button {
+  border: 1px solid #4a4a4a;
+  background: #9ca1a2;
+  font-size: 14px;
+  color: black;
+  padding: 5px 15px;
+}
+.listing-container .listing-section .search-component-container button:hover {
+  background: #4a4a4a;
+  color: #fff;
+}
+/*Filter Component CSS*/
+.filter-container input[type="radio"] {
+  display: none;
+}
+.filter-container .tab > label {
+  display: block;
+  background: red;
+  padding: 10px 0 10px 10px;
+  cursor: pointer;
+}
+.filter-container .tab > label:after {
+  content: "\002b";
+  position: relative;
+  top: 2px;
+  float: right;
+  right: 13px;
+  display: inline-block;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 100;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+}
+.filter-container .tab > input[type="radio"]:checked + label::after {
+  content: "\2212";
+}
+.filter-container .tab > input[type="radio"]:checked .tab-content {
+  display: block;
+}
+.filter-container .tab ul {
+  margin-left: 25px;
+  display: none;
+}

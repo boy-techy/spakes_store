@@ -26,27 +26,26 @@ export const Filter = () => {
     };
 
     return(
-        <div>
-            <div>
-                <div className="tab blue">
-                    <input id="tab-four" type="radio" name="tabs2" />
-                    <label htmlFor="tab-four">Category</label>
-                    <ul className="list-unstyled tab-content">
-                        {
-                            filters.category.map((categoryFilter)=>{
-                                return (<li>
-                                    <input type="checkbox" id={categoryFilter.id} name={categoryFilter.id} value={categoryFilter.value} />
-                                    <label htmlFor={categoryFilter.id}>{categoryFilter.label}</label>
-                                </li>)
-                            })
-                        }
-                    </ul>
-                </div>
+        <div className="filter-container">
+            <div className="tab">
+                <input id="category" type="radio" name="tabs2" />
+                <label htmlFor="category">Category</label>
+                <ul className="list-unstyled tab-content">
+                    {
+                        filters.category.map((categoryFilter)=>{
+                            return (<li>
+                                <input type="checkbox" id={categoryFilter.id} name={categoryFilter.id} value={categoryFilter.value} />
+                                <label htmlFor={categoryFilter.id}>{categoryFilter.label}</label>
+                            </li>)
+                        })
+                    }
+                </ul>
             </div>
 
-            <div>
-                <span>Frame Type:</span>
-                <ul className="list-unstyled">
+            <div className="tab">
+                <input id="frameType" type="radio" name="tabs2" />
+                <label htmlFor="frameType">Frame Type:</label>
+                <ul className="list-unstyled tab-content">
                     {
                         filters.frameType.map((categoryFilter)=>{
                             return (<li>
@@ -58,13 +57,28 @@ export const Filter = () => {
                 </ul>
             </div>
 
-            <div>
-                <div className="tab blue">
-                    <input id="tab-four" type="radio" name="tabs2" />
-                    <label htmlFor="tab-four">Frame Size:</label>
+            <div className="tab">
+                <input id="frameSize" type="radio" name="tabs2" />
+                <label htmlFor="frameSize">Frame Size:</label>
+                <ul className="list-unstyled tab-content">
+                    {
+                        filters.frameSize.map((categoryFilter)=>{
+                            return (<li>
+                                <input type="checkbox" id={categoryFilter.id} name={categoryFilter.id} value={categoryFilter.value} />
+                                <label htmlFor={categoryFilter.id}>{categoryFilter.label}</label>
+                            </li>)
+                        })
+                    }
+                </ul>
+            </div>
+
+
+            <div className="tab">
+                <input id="frameShape" type="radio" name="tabs2" />
+                    <label htmlFor="frameShape">Frame Shape:</label>
                     <ul className="list-unstyled tab-content">
                         {
-                            filters.frameSize.map((categoryFilter)=>{
+                            filters.frameShape.map((categoryFilter)=>{
                                 return (<li>
                                     <input type="checkbox" id={categoryFilter.id} name={categoryFilter.id} value={categoryFilter.value} />
                                     <label htmlFor={categoryFilter.id}>{categoryFilter.label}</label>
@@ -72,24 +86,6 @@ export const Filter = () => {
                             })
                         }
                     </ul>
-                </div>
-            </div>
-
-            <div>
-                <div className="tab blue">
-                    <input id="tab-four" type="radio" name="tabs2" />
-                        <label htmlFor="tab-four">Frame Shape:</label>
-                        <ul className="list-unstyled tab-content">
-                            {
-                                filters.frameShape.map((categoryFilter)=>{
-                                    return (<li>
-                                        <input type="checkbox" id={categoryFilter.id} name={categoryFilter.id} value={categoryFilter.value} />
-                                        <label htmlFor={categoryFilter.id}>{categoryFilter.label}</label>
-                                    </li>)
-                                })
-                            }
-                        </ul>
-                </div>
             </div>
         </div>
     )
