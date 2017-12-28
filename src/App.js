@@ -5,6 +5,7 @@ import SpecsListing from "./components/specsListing/specsListing.component";
 import SpecsDetail from "./components/specsDetail/specsDetail.component";
 import './assets/App.css';
 import './assets/common/common.css';
+import "font-awesome/css/font-awesome.css";
 import Header from "./common/header.component";
 
 class App extends Component {
