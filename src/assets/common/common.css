@@ -39,8 +39,22 @@
 .custom-card.col-md-4 {
   width: 31%;
 }
+.custom-card .specs-briefs {
+  border-bottom: 1px solid #d0d3d4;
+}
 .custom-card .specs-briefs > span {
   display: block;
+}
+.custom-card .specs-briefs .brief {
+  height: 100px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 5;
+}
+.custom-card .color-change-picker {
+  margin-top: 10px;
 }
 .custom-card .color-change-picker .circle-bullet {
   height: 15px;

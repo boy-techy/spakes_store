@@ -3,6 +3,8 @@ import {SpecsCard} from "../../common/specsCard";
 import {Filter} from "../../common/filter.component";
 import Search from "../../common/search.Component";
 import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
+import {specsListingAsync} from "../../actions/async/specsListing.async";
 
 class SpecsListing extends Component {
 
@@ -11,7 +13,7 @@ class SpecsListing extends Component {
     }
 
     componentDidMount(){
-
+        this.props.fetchList();
     }
 
     searchForData = (searchKey) => {
@@ -19,6 +21,13 @@ class SpecsListing extends Component {
     };
 
     render(){
+        let {listData} = this.props;
+        let cardCollection = listData.map((cardData)=>{
+            return(
+                <SpecsCard key={cardData._id} cardData={cardData} />
+            )
+        });
+
         return(
             <div className="listing-container row">
                 <aside className="col-md-2 filter-section">
@@ -26,12 +35,7 @@ class SpecsListing extends Component {
                 </aside>
                 <section className="col-md-10 listing-section">
                     <Search {...this.props} searchForData={this.searchForData}/>
-                    <SpecsCard />
-                    <SpecsCard />
-                    <SpecsCard />
-                    <SpecsCard />
-                    <SpecsCard />
-                    <SpecsCard />
+                    { cardCollection }
                 </section>
             </div>
         )
@@ -39,12 +43,12 @@ class SpecsListing extends Component {
 }
 
 const mapStateToProps = (reduxStore)=> ({
-
+    listData: reduxStore.listReducer.listData
 });
 
 
 const mapDispatchToProps = (dispatch)=> ({
-
+    fetchList: bindActionCreators(specsListingAsync,dispatch)
 });
 
 

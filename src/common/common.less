@@ -46,9 +46,19 @@
     >span {
       display: block;
     }
+    .brief {
+      height: 100px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 5;
+    }
+    border-bottom: 1px solid #d0d3d4;
   }
 
   .color-change-picker {
+    margin-top: 10px;
     .circle-bullet {
       height: 15px;
       width: 15px;

@@ -6,3 +6,7 @@ export const authConst =  {
 export const searchConst = {
   SEARCH_DATA: 'SearchData'
 };
+
+export const specsListingConst = {
+    SPECS_LIST: 'Specs List Fetch'
+};
