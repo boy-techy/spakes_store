@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import {SpecsCard} from "../../common/specsCard";
 import {Filter} from "../../common/filter.component";
 import Search from "../../common/search.Component";
+import {connect} from 'react-redux';
 
-export default class SpecsListing extends Component {
+class SpecsListing extends Component {
 
     constructor(props){
         super(props);
@@ -36,3 +37,15 @@ export default class SpecsListing extends Component {
         )
     }
 }
+
+const mapStateToProps = (reduxStore)=> ({
+
+});
+
+
+const mapDispatchToProps = (dispatch)=> ({
+
+});
+
+
+export default connect(mapStateToProps,mapDispatchToProps)(SpecsListing)

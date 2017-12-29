@@ -4,7 +4,7 @@ import Search from '../../common/search.Component';
 import {connect} from 'react-redux';
 import {searchData} from "../../actions/searchData";
 
-export class HomePage extends Component {
+class HomePage extends Component {
 
     render(){
         return(

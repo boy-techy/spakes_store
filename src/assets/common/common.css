@@ -115,7 +115,7 @@
 }
 .filter-container .tab > label {
   display: block;
-  background: red;
+  background: #f5f4f4;
   padding: 10px 0 10px 10px;
   cursor: pointer;
 }
