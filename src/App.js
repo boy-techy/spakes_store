@@ -7,6 +7,7 @@ import './assets/App.css';
 import './assets/common/common.css';
 import "font-awesome/css/font-awesome.css";
 import Header from "./common/header.component";
+import NoMatch from "./noMatch";
 
 class App extends Component {
 
@@ -20,6 +21,7 @@ class App extends Component {
               <Route exact path="/" component={HomePage}/>
               <Route path="/list" component={SpecsListing}/>
               <Route path="/detail/:id" component={SpecsDetail}/>
+              <Route component={NoMatch} />
             </Switch>
           </div>
         </Router>

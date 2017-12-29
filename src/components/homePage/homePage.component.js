@@ -1,6 +1,8 @@
 import React,{Component} from 'react';
 import '../../assets/components/homePage/homepage.css';
 import Search from '../../common/search.Component';
+import {connect} from 'react-redux';
+import {searchData} from "../../actions/searchData";
 
 export class HomePage extends Component {
 
@@ -14,4 +16,12 @@ export class HomePage extends Component {
     }
 }
 
-export default HomePage;
+const mapStateToProps = (reduxState)=> ({
+
+});
+
+const mapDispatchToProps = (dispatch)=> ({
+    searchData: (data)=> dispatch(searchData(data))
+});
+
+export default connect(mapStateToProps,mapDispatchToProps)(HomePage);

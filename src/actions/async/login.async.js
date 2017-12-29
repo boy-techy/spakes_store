@@ -1,6 +1,5 @@
-import {POST} from '../../web_apis/fetchData.api';
-import {HOST} from '../../index.constant';
-import loginUser from '../index';
+import {POST} from '../../web_apis/webApI.Service';
+import {loginUser} from '../index';
 
 export function authenicateUser(acct_obj,headers=null) {
     let URL = HOST.URL+ '/login';
@@ -13,3 +12,7 @@ export function authenicateUser(acct_obj,headers=null) {
             console.error("Error: ",err);
         })
 }
+
+const HOST = {
+  URL: 'http://localhost:3000'
+};

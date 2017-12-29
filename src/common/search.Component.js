@@ -25,10 +25,13 @@ export default class Search extends Component {
             this.setState({
                error: true
             });
+            return;
         }
-        else if(this.props.location.pathname === "/list"){
+        if(this.props.location.pathname === "/list"){
             this.props.searchForData(this.state.searchText);
         }else {
+            console.log("Props are: ",this.props);
+            this.props.searchData(this.state.searchText);
             this.props.history.push(`/list?searchTerm=${this.state.searchText}`);
         }
 
@@ -43,3 +46,5 @@ export default class Search extends Component {
         )
     }
 }
+
+export default
