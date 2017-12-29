@@ -5,6 +5,19 @@ import Search from "../../common/search.Component";
 
 export default class SpecsListing extends Component {
 
+    constructor(props){
+        super(props);
+        console.log("Props are: ",props);
+    }
+
+    componentDidMount(){
+
+    }
+
+    searchForData = (searchKey) => {
+        console.log("Search For Data: ",searchKey);
+    };
+
     render(){
         return(
             <div className="listing-container row">
@@ -12,7 +25,7 @@ export default class SpecsListing extends Component {
                     <Filter />
                 </aside>
                 <section className="col-md-10 listing-section">
-                    <Search />
+                    <Search {...this.props} searchForData={this.searchForData}/>
                     <SpecsCard />
                     <SpecsCard />
                     <SpecsCard />

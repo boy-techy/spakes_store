@@ -416,3 +416,6 @@
 .slider-custom-style .slick-dots {
   bottom: 0;
 }
+.error {
+  border-color: red !important;
+}

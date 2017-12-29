@@ -32,8 +32,8 @@ export const Filter = () => {
                 <label htmlFor="category">Category</label>
                 <ul className="list-unstyled tab-content">
                     {
-                        filters.category.map((categoryFilter)=>{
-                            return (<li>
+                        filters.category.map((categoryFilter,index)=>{
+                            return (<li key={index}>
                                 <input type="checkbox" id={categoryFilter.id} name={categoryFilter.id} value={categoryFilter.value} />
                                 <label htmlFor={categoryFilter.id}>{categoryFilter.label}</label>
                             </li>)
@@ -47,8 +47,8 @@ export const Filter = () => {
                 <label htmlFor="frameType">Frame Type:</label>
                 <ul className="list-unstyled tab-content">
                     {
-                        filters.frameType.map((categoryFilter)=>{
-                            return (<li>
+                        filters.frameType.map((categoryFilter,index)=>{
+                            return (<li key={index}>
                                 <input type="checkbox" id={categoryFilter.id} name={categoryFilter.id} value={categoryFilter.value} />
                                 <label htmlFor={categoryFilter.id}>{categoryFilter.label}</label>
                             </li>)
@@ -62,8 +62,8 @@ export const Filter = () => {
                 <label htmlFor="frameSize">Frame Size:</label>
                 <ul className="list-unstyled tab-content">
                     {
-                        filters.frameSize.map((categoryFilter)=>{
-                            return (<li>
+                        filters.frameSize.map((categoryFilter,index)=>{
+                            return (<li key={index}>
                                 <input type="checkbox" id={categoryFilter.id} name={categoryFilter.id} value={categoryFilter.value} />
                                 <label htmlFor={categoryFilter.id}>{categoryFilter.label}</label>
                             </li>)
@@ -78,8 +78,8 @@ export const Filter = () => {
                     <label htmlFor="frameShape">Frame Shape:</label>
                     <ul className="list-unstyled tab-content">
                         {
-                            filters.frameShape.map((categoryFilter)=>{
-                                return (<li>
+                            filters.frameShape.map((categoryFilter,index)=>{
+                                return (<li key={index}>
                                     <input type="checkbox" id={categoryFilter.id} name={categoryFilter.id} value={categoryFilter.value} />
                                     <label htmlFor={categoryFilter.id}>{categoryFilter.label}</label>
                                 </li>)

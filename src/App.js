@@ -9,6 +9,7 @@ import "font-awesome/css/font-awesome.css";
 import Header from "./common/header.component";
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
@@ -18,9 +19,8 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={HomePage}/>
               <Route path="/list" component={SpecsListing}/>
-              <Route path="/detail" component={SpecsDetail}/>
+              <Route path="/detail/:id" component={SpecsDetail}/>
             </Switch>
-            {/*<Footer />*/}
           </div>
         </Router>
       </div>

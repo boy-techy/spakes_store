@@ -1,5 +1,6 @@
 import React from 'react';
-import {Row,Col,Thumbnail} from 'react-bootstrap';
+import {Col} from 'react-bootstrap';
+import {Link} from 'react-router-dom';
 import teenGlasses from "../assets/Teen-Glasses-md.jpg";
 
 export const SpecsCard = ({data}) => {
@@ -7,7 +8,9 @@ export const SpecsCard = ({data}) => {
     return(
         <Col xs={12} md={4} className="custom-card">
                 <div>
-                    <Thumbnail href="#" alt="Card Image" src={teenGlasses}/>
+                    <Link to={"/detail/1"}>
+                        <img src={teenGlasses} alt="Card Image" className="img-thumbnail"/>
+                    </Link>
                     <div className="specs-briefs">
                         <span>Name:  </span>
                         <span>Model No:  </span>
