@@ -6,12 +6,27 @@
 }
 /*Header Component CSS*/
 .header-container {
-  min-height: 50px;
-  background: rgba(255, 255, 255, 0.9);
   box-shadow: 0 2px 10px #d0d3d4;
   position: fixed;
   width: 100%;
-  z-index: 2;
+  z-index: 3;
+  background-color: #dbecec;
+  padding: 0 50px;
+  font-size: 20px;
+}
+.header-container a {
+  padding: 9px 10px;
+  display: inline-block;
+  color: black;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-decoration: none;
+}
+.header-container em {
+  margin-right: 10px;
+  padding: 10px;
+  display: inline-block;
+  cursor: pointer;
 }
 /*Specs Card*/
 .custom-card {
