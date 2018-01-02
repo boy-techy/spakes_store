@@ -9,10 +9,6 @@ import Loader from "../../common/loader.component";
 
 class SpecsListing extends Component {
 
-    constructor(props){
-        super(props);
-    }
-
     componentDidMount(){
         this.props.fetchList();
     }

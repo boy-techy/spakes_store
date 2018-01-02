@@ -10,3 +10,7 @@ export const searchConst = {
 export const specsListingConst = {
     SPECS_LIST: 'Specs List Fetch'
 };
+
+export const suggestionListConst = {
+    SUGGESTION_LIST: 'Suggestion List'
+};

@@ -1,14 +1,22 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {bindActionCreators} from 'redux';
 import first from '../../assets/1.jpg'
 import second from '../../assets/2.jpg'
 import third from '../../assets/3.jpg'
 import {SpecsCard} from "../../common/specsCard";
 import Slider from  'react-slick';
+import {getSuggestionList} from "../../actions/async/suggestionList.async";
 
+class SpecsDetail extends Component {
 
-export default class SpecsDetail extends Component {
+    componentDidMount(){
+        this.props.fetchSuggestions();
+    }
+
 
     render() {
+        let {suggestionList} = this.props;
         let imageUrls = [{src: first, alt: "First Image"},
             {src: second, alt: "Second Image"},
             {src: third, alt: "Third Image"}];
@@ -28,6 +36,12 @@ export default class SpecsDetail extends Component {
                     <img src={image.src} alt={image.alt} className="img-thumbnail"/>
                 </div>
             )
+        });
+
+        let suggestionsCollection = suggestionList.map((cardData)=> {
+           return (<div className="col-md-12" key={cardData._id}>
+               <SpecsCard cardData={cardData}/>
+           </div>);
         });
 
         return (
@@ -175,18 +189,7 @@ export default class SpecsDetail extends Component {
                     <div className="col-md-12 suggestion-slider-section">
                         <p>You may also be interested in </p>
                         <Slider {...sliderSettings}>
-                            <div className="col-md-12">
-                                <SpecsCard />
-                            </div>
-                            <div className="col-md-12">
-                                <SpecsCard />
-                            </div>
-                            <div className="col-md-12">
-                                <SpecsCard />
-                            </div>
-                            <div className="col-md-12">
-                                <SpecsCard />
-                            </div>
+                            {suggestionsCollection}
                         </Slider>
                     </div>
 
@@ -198,3 +201,14 @@ export default class SpecsDetail extends Component {
         )
     }
 }
+
+const mapStateToProps = (reduxStore) => ({
+    suggestionList: reduxStore.suggestionListingReducer.listData
+});
+
+const mapDispatchToProps = (dispatch) => ({
+    fetchSuggestions: bindActionCreators(getSuggestionList, dispatch)
+});
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(SpecsDetail);
