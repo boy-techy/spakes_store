@@ -5,6 +5,7 @@ import Search from "../../common/search.Component";
 import {connect} from 'react-redux';
 import {bindActionCreators} from 'redux';
 import {specsListingAsync} from "../../actions/async/specsListing.async";
+import Loader from "../../common/loader.component";
 
 class SpecsListing extends Component {
 
@@ -35,7 +36,7 @@ class SpecsListing extends Component {
                 </aside>
                 <section className="col-md-10 listing-section">
                     <Search {...this.props} searchForData={this.searchForData}/>
-                    { cardCollection }
+                    { cardCollection.length ? cardCollection : <Loader /> }
                 </section>
             </div>
         )

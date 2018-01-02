@@ -3,59 +3,57 @@ import React from 'react';
 const Loader = () => {
     return(
         <div className="loader-container">
-            <svg width="58" height="58" viewBox="0 0 58 58">
-                <g fill="none" fillRule="evenodd">
-                    <g transform="translate(2 1)" stroke="#FFF" strokeWidth="1.5">
-                        <circle cx="42.601" cy="11.462" r="5" fillOpacity="1" fill="#fff">
-                            <animate attributeName="fill-opacity"
-                                     begin="0s" dur="1.3s"
-                                     values="1;0;0;0;0;0;0;0" calcMode="linear"
-                                     repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="49.063" cy="27.063" r="5" fillOpacity="0" fill="#fff">
-                            <animate attributeName="fill-opacity"
-                                     begin="0s" dur="1.3s"
-                                     values="0;1;0;0;0;0;0;0" calcMode="linear"
-                                     repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="42.601" cy="42.663" r="5" fillOpacity="0" fill="#fff">
-                            <animate attributeName="fill-opacity"
-                                     begin="0s" dur="1.3s"
-                                     values="0;0;1;0;0;0;0;0" calcMode="linear"
-                                     repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="27" cy="49.125" r="5" fillOpacity="0" fill="#fff">
-                            <animate attributeName="fill-opacity"
-                                     begin="0s" dur="1.3s"
-                                     values="0;0;0;1;0;0;0;0" calcMode="linear"
-                                     repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="11.399" cy="42.663" r="5" fillOpacity="0" fill="#fff">
-                            <animate attributeName="fill-opacity"
-                                     begin="0s" dur="1.3s"
-                                     values="0;0;0;0;1;0;0;0" calcMode="linear"
-                                     repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="4.938" cy="27.063" r="5" fillOpacity="0" fill="#fff">
-                            <animate attributeName="fill-opacity"
-                                     begin="0s" dur="1.3s"
-                                     values="0;0;0;0;0;1;0;0" calcMode="linear"
-                                     repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="11.399" cy="11.462" r="5" fillOpacity="0" fill="#fff">
-                            <animate attributeName="fill-opacity"
-                                     begin="0s" dur="1.3s"
-                                     values="0;0;0;0;0;0;1;0" calcMode="linear"
-                                     repeatCount="indefinite" />
-                        </circle>
-                        <circle cx="27" cy="5" r="5" fillOpacity="0" fill="#fff">
-                            <animate attributeName="fill-opacity"
-                                     begin="0s" dur="1.3s"
-                                     values="0;0;0;0;0;0;0;1" calcMode="linear"
-                                     repeatCount="indefinite" />
-                        </circle>
-                    </g>
-                </g>
+            <svg width="135" height="140" viewBox="0 0 135 140" fill="#00b0ff">
+                <rect y="10" width="15" height="120" rx="6">
+                    <animate attributeName="height"
+                             begin="0.5s" dur="1s"
+                             values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                             repeatCount="indefinite" />
+                    <animate attributeName="y"
+                             begin="0.5s" dur="1s"
+                             values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                             repeatCount="indefinite" />
+                </rect>
+                <rect x="30" y="10" width="15" height="120" rx="6">
+                    <animate attributeName="height"
+                             begin="0.25s" dur="1s"
+                             values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                             repeatCount="indefinite" />
+                    <animate attributeName="y"
+                             begin="0.25s" dur="1s"
+                             values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                             repeatCount="indefinite" />
+                </rect>
+                <rect x="60" width="15" height="140" rx="6">
+                    <animate attributeName="height"
+                             begin="0s" dur="1s"
+                             values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                             repeatCount="indefinite" />
+                    <animate attributeName="y"
+                             begin="0s" dur="1s"
+                             values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                             repeatCount="indefinite" />
+                </rect>
+                <rect x="90" y="10" width="15" height="120" rx="6">
+                    <animate attributeName="height"
+                             begin="0.25s" dur="1s"
+                             values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                             repeatCount="indefinite" />
+                    <animate attributeName="y"
+                             begin="0.25s" dur="1s"
+                             values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                             repeatCount="indefinite" />
+                </rect>
+                <rect x="120" y="10" width="15" height="120" rx="6">
+                    <animate attributeName="height"
+                             begin="0.5s" dur="1s"
+                             values="120;110;100;90;80;70;60;50;40;140;120" calcMode="linear"
+                             repeatCount="indefinite" />
+                    <animate attributeName="y"
+                             begin="0.5s" dur="1s"
+                             values="10;15;20;25;30;35;40;45;50;0;10" calcMode="linear"
+                             repeatCount="indefinite" />
+                </rect>
             </svg>
         </div>
     )

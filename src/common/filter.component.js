@@ -30,7 +30,7 @@ export const Filter = () => {
             <div className="tab">
                 <input id="category" type="radio" name="tabs2" />
                 <label htmlFor="category">Category</label>
-                <ul className="list-unstyled tab-content">
+                <ul className="list-unstyled tabContent">
                     {
                         filters.category.map((categoryFilter,index)=>{
                             return (<li key={index}>
@@ -45,7 +45,7 @@ export const Filter = () => {
             <div className="tab">
                 <input id="frameType" type="radio" name="tabs2" />
                 <label htmlFor="frameType">Frame Type:</label>
-                <ul className="list-unstyled tab-content">
+                <ul className="list-unstyled tabContent">
                     {
                         filters.frameType.map((categoryFilter,index)=>{
                             return (<li key={index}>
@@ -60,7 +60,7 @@ export const Filter = () => {
             <div className="tab">
                 <input id="frameSize" type="radio" name="tabs2" />
                 <label htmlFor="frameSize">Frame Size:</label>
-                <ul className="list-unstyled tab-content">
+                <ul className="list-unstyled tabContent">
                     {
                         filters.frameSize.map((categoryFilter,index)=>{
                             return (<li key={index}>
@@ -76,7 +76,7 @@ export const Filter = () => {
             <div className="tab">
                 <input id="frameShape" type="radio" name="tabs2" />
                     <label htmlFor="frameShape">Frame Shape:</label>
-                    <ul className="list-unstyled tab-content">
+                    <ul className="list-unstyled tabContent">
                         {
                             filters.frameShape.map((categoryFilter,index)=>{
                                 return (<li key={index}>

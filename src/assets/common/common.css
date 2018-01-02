@@ -113,15 +113,17 @@
   color: #d0d3d4;
 }
 .listing-container .listing-section .search-component-container button {
-  border: 1px solid #4a4a4a;
-  background: #9ca1a2;
+  background: #dbecec;
+  text-transform: uppercase;
+  border: none;
   font-size: 14px;
   color: black;
-  padding: 5px 15px;
+  padding: 6px 15px;
+  border-radius: 0;
 }
 .listing-container .listing-section .search-component-container button:hover {
   background: #4a4a4a;
-  color: #fff;
+  color: #dbecec;
 }
 /*Filter Component CSS*/
 .filter-container input[type="radio"] {
@@ -149,12 +151,18 @@
 .filter-container .tab > input[type="radio"]:checked + label::after {
   content: "\2212";
 }
-.filter-container .tab > input[type="radio"]:checked .tab-content {
+.filter-container .tab > input[type="radio"]:checked ~ .tabContent {
   display: block;
 }
-.filter-container .tab ul {
+.filter-container ul {
   margin-left: 25px;
   display: none;
+}
+.filter-container ul input {
+  margin-right: 5px;
+}
+.filter-container ul label {
+  font-weight: inherit;
 }
 /* Detail Page */
 .detail-container {

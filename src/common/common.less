@@ -123,14 +123,16 @@
       }
     }
     .search-component-container button {
-      border: 1px solid #4a4a4a;
-      background: #9ca1a2;
+      background: #dbecec;
+      text-transform: uppercase;
+      border: none;
       font-size: 14px;
       color: black;
-      padding: 5px 15px;
+      padding: 6px 15px;
+      border-radius: 0;
       &:hover {
         background: #4a4a4a;
-        color: #fff;
+        color: #dbecec;
       }
     }
   }
@@ -165,13 +167,19 @@
       +label::after {
         content: "\2212";
       }
-      .tab-content {
+      ~.tabContent {
         display: block;
       }
     }
-    ul {
-      margin-left: 25px;
-      display: none;
+  }
+  ul {
+    margin-left: 25px;
+    display: none;
+    input {
+      margin-right: 5px;
+    }
+    label {
+      font-weight: inherit;
     }
   }
 }
