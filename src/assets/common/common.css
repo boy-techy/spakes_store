@@ -49,9 +49,6 @@
   height: 100px;
   overflow: hidden;
   text-overflow: ellipsis;
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 5;
 }
 .custom-card .color-change-picker {
   margin-top: 10px;
@@ -73,7 +70,7 @@
   background-color: #000;
 }
 .custom-card .color-change-picker .circle-bullet.circle-bullet-white {
-  background-color: white;
+  background-color: #fff;
   border: 1px solid #000;
 }
 /*SpecsListing CSS*/
@@ -152,11 +149,14 @@
   content: "\2212";
 }
 .filter-container .tab > input[type="radio"]:checked ~ .tabContent {
-  display: block;
+  height: 100px;
+  transition: 1s;
+  overflow: visible;
 }
 .filter-container ul {
   margin-left: 25px;
-  display: none;
+  height: 0;
+  overflow: hidden;
 }
 .filter-container ul input {
   margin-right: 5px;
@@ -411,6 +411,11 @@
 }
 .detail-container .cart-buttons .btn i {
   padding-right: 15px;
+}
+.detail-container .cart-buttons .btn:hover {
+  background: #000;
+  border: none;
+  color: #fff;
 }
 .detail-container .cart-buttons .add-cart-btn {
   margin-right: 20px;

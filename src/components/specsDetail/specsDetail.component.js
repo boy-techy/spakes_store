@@ -23,10 +23,8 @@ class SpecsDetail extends Component {
 
         let sliderSettings = {
             dots: true,
-            infinite: true,
             speed: 500,
-            slidesToShow: 4,
-            slidesToScroll: 1,
+            slidesToShow: 3,
             className: "suggestion-slider"
         };
 

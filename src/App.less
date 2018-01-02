@@ -1,5 +1,7 @@
+@import "./common/_variable";
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
+
 
 .App {
   overflow: hidden;
@@ -11,13 +13,13 @@
   z-index: 2;
   input,button {
     padding: 10px 15px;
-    color: #fff;
+    color: @themeWhite;
     outline: none;
     border: none;
   }
   input {
     border-radius: 0;
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid @themeWhite;
     min-width: 40%;
     background: transparent;
     margin-right: 10px;

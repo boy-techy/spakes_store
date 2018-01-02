@@ -32,7 +32,9 @@ class SpecsListing extends Component {
                 </aside>
                 <section className="col-md-10 listing-section">
                     <Search {...this.props} searchForData={this.searchForData}/>
-                    { cardCollection.length ? cardCollection : <Loader /> }
+                    <div>
+                        { cardCollection.length ? cardCollection : <Loader /> }
+                    </div>
                 </section>
             </div>
         )

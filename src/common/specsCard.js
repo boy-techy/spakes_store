@@ -9,7 +9,7 @@ export const SpecsCard = (props) => {
     return(
         <Col xs={12} md={4} className="custom-card">
                 <div>
-                    <Link to={"/detail/1"}>
+                    <Link to={`/detail/${cardData._id}`}>
                         <img src={teenGlasses} alt="Card Image" className="img-thumbnail"/>
                     </Link>
                     <div className="specs-briefs">
