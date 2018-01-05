@@ -6,6 +6,7 @@ export function specsListingAsync() {
     return (dispatch,getState) => GET(URL)
         .then((response)=>{
             dispatch(specsListing(response.data));
+            return response.data;
         })
         .catch((error)=>{
             return error;

@@ -30,7 +30,6 @@ export default class Search extends Component {
         if(this.props.location.pathname === "/list"){
             this.props.searchForData(this.state.searchText);
         }else {
-            console.log("Props are: ",this.props);
             this.props.searchData(this.state.searchText);
             this.props.history.push(`/list?searchTerm=${this.state.searchText}`);
         }

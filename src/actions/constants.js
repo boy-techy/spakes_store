@@ -12,5 +12,6 @@ export const specsListingConst = {
 };
 
 export const suggestionListConst = {
-    SUGGESTION_LIST: 'Suggestion List'
+    SUGGESTION_LIST: 'Suggestion List',
+    PRODUCT_DETAIL: 'Product Details'
 };

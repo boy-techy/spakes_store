@@ -2,13 +2,15 @@ import {combineReducers} from 'redux';
 import loginReducer from './loginReducer';
 import homeReducer from './homeReducer';
 import listReducer from './specsListingReducer';
-import suggestionListingReducer from "./suggestionListingReducer";
+import specsDetailReducer from "./specsDetailReducer";
+import { reducer as reduxFormReducer } from 'redux-form';
 
 const rootReducer = combineReducers({
     loginReducer,
     homeReducer,
     listReducer,
-    suggestionListingReducer
+    specsDetailReducer,
+    form: reduxFormReducer
 });
 
 export default rootReducer;

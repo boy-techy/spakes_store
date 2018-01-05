@@ -7,16 +7,34 @@ import third from '../../assets/3.jpg'
 import {SpecsCard} from "../../common/specsCard";
 import Slider from  'react-slick';
 import {getSuggestionList} from "../../actions/async/suggestionList.async";
+import {getProductDetail} from "../../actions/getProductDetail";
+import PowerDetailForm from './powerDetailForm';
 
 class SpecsDetail extends Component {
 
+    constructor(props){
+        super(props);
+        this.state = {
+            powerDetails: {
+                distance: {
+                    OD: {sphere: '', cylinder: '', axis: '', prism: ''},
+                    OS: {sphere: '', cylinder: '', axis: '', prism: ''}
+                },
+                add: {
+
+                }
+            }
+        }
+    }
+
     componentDidMount(){
         this.props.fetchSuggestions();
+        this.props.fetchProductDetail(this.props.match.params.id);
     }
 
 
     render() {
-        let {suggestionList} = this.props;
+        let {suggestionList, productDetail} = this.props;
         let imageUrls = [{src: first, alt: "First Image"},
             {src: second, alt: "Second Image"},
             {src: third, alt: "Third Image"}];
@@ -45,7 +63,7 @@ class SpecsDetail extends Component {
         return (
 
             <div className="detail-container">
-                <section className="col-md-4 left-section">
+                <section className="col-md-4  left-section">
                     <div className="product-container">
                         <div className="carousel-container">
                             {cardThumbnails}
@@ -83,8 +101,8 @@ class SpecsDetail extends Component {
                         <span>1,011 Ratings & 219 Reviews</span>
                     </p>
                     <p className="price">
-                        <span><i className="fa fa-inr" aria-hidden="true"/>999</span>
-                        <del><i className="fa fa-inr" aria-hidden="true"/>1500</del>
+                        <span><i className="fa fa-inr" aria-hidden="true"/>{productDetail.price}</span>
+                        <del><i className="fa fa-inr" aria-hidden="true"/>{productDetail.price + (productDetail.price*.65)}</del>
                         <span className="discount">65% Off</span>
                     </p>
 
@@ -125,63 +143,12 @@ class SpecsDetail extends Component {
                                 </button>
                             </div>
                         </div>
-
-                        <div className="power-details col-md-8">
-                            <table className="table table-bordered">
-                                <tbody>
-                                <tr>
-                                    <td colSpan={2} />
-                                    <td>SPHERE</td>
-                                    <td>CYLINDER</td>
-                                    <td>AXIS</td>
-                                    <td>PRISM</td>
-                                    <td>BASE</td>
-                                </tr>
-                                <tr>
-                                    <td rowSpan={2}>DISTANCE</td>
-                                    <td>OD</td>
-                                    <td><input type="text" placeholder="+/- 1"/></td>
-                                    <td><input type="text" placeholder="+/- 0.60"/></td>
-                                    <td><input type="text" placeholder="120"/></td>
-                                    <td><input type="text" placeholder="0.5"/></td>
-                                    <td>down</td>
-                                </tr>
-                                <tr>
-                                    <td>OS</td>
-                                    <td><input type="text" placeholder="+/- 1"/></td>
-                                    <td><input type="text" placeholder="+/- 0.60"/></td>
-                                    <td><input type="text" placeholder="120"/></td>
-                                    <td><input type="text" placeholder="0.5"/></td>
-                                    <td>up</td>
-                                </tr>
-                                <tr>
-                                    <td rowSpan={2}>ADD</td>
-                                    <td>OD</td>
-                                    <td><input type="text" placeholder="+/- 2.0" /></td>
-                                    <td colSpan={4} rowSpan={2}>
-                                        <textarea type="text" placeholder="Additional Information"/>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>OD</td>
-                                    <td><input type="text" placeholder="+/- 2.0" /></td>
-                                </tr>
-                                </tbody>
-                            </table>
-                        </div>
+                        <PowerDetailForm />
                     </div>
 
                     <div className="product-desc">
                         <span className="caption">Product Description</span>
-                        <p>
-                            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-                            been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-                            galley of type and scrambled it to make a type specimen book. It has survived not only five
-                            centuries, but also the leap into electronic typesetting, remaining essentially unchanged.
-                            It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-                            passages, and more recently with desktop publishing software like Aldus PageMaker including
-                            versions of Lorem Ipsum.
-                        </p>
+                        <p>{productDetail.desc}</p>
                     </div>
 
                     <div className="col-md-12 suggestion-slider-section">
@@ -201,11 +168,13 @@ class SpecsDetail extends Component {
 }
 
 const mapStateToProps = (reduxStore) => ({
-    suggestionList: reduxStore.suggestionListingReducer.listData
+    suggestionList: reduxStore.specsDetailReducer.listData,
+    productDetail: reduxStore.specsDetailReducer.productDetail,
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    fetchSuggestions: bindActionCreators(getSuggestionList, dispatch)
+    fetchSuggestions: bindActionCreators(getSuggestionList, dispatch),
+    fetchProductDetail: bindActionCreators((_id)=> getProductDetail(_id), dispatch)
 });
 
 
