@@ -169,7 +169,7 @@ class SpecsDetail extends Component {
 
 const mapStateToProps = (reduxStore) => ({
     suggestionList: reduxStore.specsDetailReducer.listData,
-    productDetail: reduxStore.specsDetailReducer.productDetail,
+    productDetail: reduxStore.specsDetailReducer.productDetail || {},
 });
 
 const mapDispatchToProps = (dispatch) => ({
