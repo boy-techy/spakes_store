@@ -17,7 +17,8 @@
     "redux": "^3.7.2",
     "redux-form": "^7.2.0",
     "redux-logger": "^3.0.6",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "workbox-build": "^5.0.0"
   },
   "devDependencies": {
     "less-watch-compiler": "^1.10.0",
@@ -37,6 +38,10 @@
   },
   "reactSnap": {
     "inlineCss": true,
-    "include": ["/", "/list", "/detail"]
+    "include": [
+      "/",
+      "/list",
+      "/detail"
+    ]
   }
 }
